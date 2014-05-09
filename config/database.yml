@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: postgres
   pool: 5
-  username: postgres
+  username: jassiemmoore
   password: 
   host: localhost
 
@@ -55,7 +55,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: myapp_production
+  database: postgres
   pool: 5
-  username: myapp
-  password:
+  username: jassiemmoore
+  password: 
+  host: localhost
