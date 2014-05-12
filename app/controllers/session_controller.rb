@@ -27,7 +27,7 @@ class SessionController < ApplicationController
   end
 
   def test
-    render: json => {data: "api data"}, status: :ok
+    render :json => {data: "api data"}, status: :ok
   end
   
   private
