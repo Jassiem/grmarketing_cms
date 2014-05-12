@@ -3,7 +3,7 @@ Grassroot::Application.routes.draw do
 
   get "partials/:partial", to: "partials#show_partial"
   #get "secured/:partial", to: "partials#show_secured"
-  match "api/test", to: "session#test"
+  match "api/test", to: "session#test", via: [:get]
 
 
   # API Routes
