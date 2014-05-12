@@ -36,6 +36,8 @@ end
 
  gem 'rails_12factor', group: :production
 
+ gem 'sprockets_better_errors', group: :development
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
