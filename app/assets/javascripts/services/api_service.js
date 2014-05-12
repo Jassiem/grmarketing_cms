@@ -1,5 +1,5 @@
 // Service definition
-app.service('apiService', ['$http', function($http){
+grassroot.service('apiService', ['$http', function($http){
 
   //args for apiCall (callback, requestMethod, action, requestData)
   this.apiCall = function(callback){

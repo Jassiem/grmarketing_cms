@@ -3,7 +3,7 @@
 //= require_tree ./services
 //= require_tree ./filters
 
-var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
+var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
 .config(['$locationProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $httpProvider, $stateProvider, $urlRouterProvider) {
   
   authToken = $("meta[name=\"csrf-token\"]").attr("content");
