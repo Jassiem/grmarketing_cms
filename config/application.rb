@@ -21,5 +21,6 @@ module Grassroot
     # config.i18n.default_locale = :de
 
      config.assets.paths << "#{Rails}/vendor/assets/fonts"
+     config.assets.precompile += %w(application.js)
   end
 end
