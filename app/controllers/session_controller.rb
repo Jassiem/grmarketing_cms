@@ -25,6 +25,10 @@ class SessionController < ApplicationController
       render :json => {userid: session[:user_id]}
     end
   end
+
+  def test
+    render: json => {data: "api data"}, status: :ok
+  end
   
   private
   def login_params
