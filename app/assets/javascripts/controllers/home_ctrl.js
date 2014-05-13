@@ -1,69 +1,21 @@
 // homepage controller
-function HomeCtrl($scope, apiService, UserData) {
-  $scope.tab = '';
-  $scope.userdata = UserData;
-  $scope.categories = [];
-  $scope.channel_title = $scope.userdata.loggedin ? 'Subscriptions' : 'Channels';
-  $scope.playlist_title = $scope.userdata.loggedin ? 'My Playlists' : 'Playlists';
-  $scope.channels = [];
-  $scope.playlists = [];
+function HomeCtrl($scope, apiService) {
 
   $scope.init = function() {
-    $scope.getCategories();
-    if ($scope.userdata.loggedin === true) {
-      $scope.getUserPlaylists();
-      $scope.getUserSubscriptions();
-    } else {
-      $scope.getRandomPlaylists();
-      $scope.getRandomChannels();
-    }
+    $scope.testApi();
   };
 
-  $scope.getCategories = function() {
+  $scope.testApi = function() {
     apiService.apiCall(function(data, status){
-      if(status == 200){
-        $scope.categories = data.categories;
+      if(status == 200) {
+        console.log(data);
       } else {
+        console.log('get fucked');
       }
-    }, 'GET', '/api/get-categories', {});
-  };
 
-  $scope.getRandomChannels = function() {
-    apiService.apiCall(function(data, status){
-      if(status == 200){
-        $scope.channels = data.channels;
-      } else {
-      }
-    }, 'GET', '/api/get-few-channels', {});
-  };
-
-  $scope.getUserSubscriptions = function() {
-    apiService.apiCall(function(data, status){
-      if(status == 200){
-        $scope.channels = data.subscriptions;
-      } else {
-      }
-    }, 'GET', '/api/get-user-subscriptions-overview', {user_id: $scope.userdata.userid});
-  };
-
-  $scope.getRandomPlaylists = function() {
-    apiService.apiCall(function(data, status){
-      if(status == 200){
-        $scope.playlists = data.playlists;
-      } else {
-      }
-    }, 'GET', '/api/get-few-playlists', {});
-  };
-
-  $scope.getUserPlaylists = function() {
-    apiService.apiCall(function(data, status){
-      if(status == 200){
-        $scope.playlists = data.playlists;
-      } else {
-      }
-    }, 'GET', '/api/get-user-playlists-overview', {user_id: $scope.userdata.userid});
-  };
+    }, 'GET', '/api/test', {});
+  }
 
   $scope.init();
 }
-HomeCtrl.$inject = ['$scope', 'apiService', 'UserData'];
+HomeCtrl.$inject = ['$scope', 'apiService'];
