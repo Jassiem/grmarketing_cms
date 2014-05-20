@@ -4,6 +4,8 @@ Grassroot::Application.routes.draw do
   get "partials/:partial", to: "partials#show_partial"
   #get "secured/:partial", to: "partials#show_secured"
   match "api/test", to: "session#test", via: [:get]
+  match "api/create-event", to: "event#create", via: [:post]
+  match "api/get-events", to: "event#get_all_events", via: [:get]
 
 
   # API Routes

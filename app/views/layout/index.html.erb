@@ -4,7 +4,28 @@
 <!-- end navbar area -->
 
 <!-- main view for angularjs router -->
-<div ui-view class='container'>
+<div class='container-fluid'>
+	<div class ='row'>
+		<!-- Sidebar -->
+		<div class="col-3 sidebar">
+      <ul class="nav nav-sidebar">
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">User Analytics</a></li>
+      </ul>
+      <hr/>
+      <ul class="nav nav-sidebar">
+        <li><a ui-sref="event">Events</a></li>
+        <li><a href="">Stories</a></li>
+      </ul>
+      <hr/>
+      <ul class="nav nav-sidebar">
+        <li><a href="">Social Media Stream</a></li>
+      </ul>
+    </div>
+    <!-- end of sidebar -->
+    <div ui-view class="col-9 main">
+  	</div>
+	</div>
 </div>
 <!-- end main view for angularjs router -->
 

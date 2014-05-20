@@ -57,11 +57,26 @@ var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-  .state('home', {
-    url: '/',
-    templateUrl: '/partials/home.html',
-    controller: 'HomeCtrl'
-	})
+    .state('home', {
+      url: '/',
+      templateUrl: '/partials/home.html',
+      controller: 'HomeCtrl'
+  	})
+    .state('event', {
+      url: '/event',
+      templateUrl: '/partials/event',
+      controller: 'EventCtrl'
+    })
+    .state('create_event', {
+      url: '/create_event',
+      templateUrl: '/partials/create_event',
+      controller: 'EventCtrl'
+    })
+    .state('events', {
+      url: '/events',
+      templateUrl: '/partials/events',
+      controller: 'EventsCtrl'
+    });
 
 	$locationProvider.html5Mode(true);
 }]);
