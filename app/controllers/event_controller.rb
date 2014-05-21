@@ -20,6 +20,14 @@ class EventController < ApplicationController
 
 	end
 
+	def get_event
+		@event = Event.find(params[:event_id])
+		render :json => {event: @event}, status: :ok
+
+	rescue ActiveRecord::RecordNotFound
+		render :json => {message: 'Unable to retrieve event.  The event cannot be found.'}, status: :bad_request
+	end
+
 	def get_all_events
 		all_events = Event.all.to_a
 		logger.info all_events

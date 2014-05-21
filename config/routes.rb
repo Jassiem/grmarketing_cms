@@ -6,6 +6,7 @@ Grassroot::Application.routes.draw do
   match "api/test", to: "session#test", via: [:get]
   match "api/create-event", to: "event#create", via: [:post]
   match "api/get-events", to: "event#get_all_events", via: [:get]
+  match "api/get-event", to: "event#get_event", via: [:get]
 
 
   # API Routes
