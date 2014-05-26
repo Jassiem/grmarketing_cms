@@ -4,6 +4,15 @@ function EventCtrl($scope, $location, apiService) {
 	$scope.form = {};
 
   $scope.formData = {};
+  $scope.minDate = new Date();
+
+  $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  $scope.formats = ['MM/dd/yyyy'];
+  $scope.format = $scope.formats[0];
 
 	$scope.createEvent = function() {
 		// check if form is valid
@@ -31,6 +40,21 @@ function EventCtrl($scope, $location, apiService) {
 		$location.url('/event');
 	}
 
+  $scope.today = function() {
+    $scope.formData.event_date = new Date();
+  };
+  $scope.today();
+
+  $scope.clear = function () {
+    $scope.formData.event_date = null;
+  };
+
+  $scope.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
 
 };
 

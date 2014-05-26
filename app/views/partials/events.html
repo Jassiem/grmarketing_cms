@@ -1,3 +1,12 @@
-<ul>
-<li ng-repeat='event in allEvents'> {{event.name}}</li>
-</ul>
+<table class='table'>
+	<tr> 
+		<th> Name </th>
+		<th> Description </th>
+		<th> Event Date </th>
+	</tr>
+	<tr ng-repeat='event in allEvents'>
+		<td> {{event.name}} </td>
+		<td> {{event.description}} </td>
+		<td> {{event.event_date}} </td>
+	</tr>
+</table>

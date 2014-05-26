@@ -3,7 +3,7 @@
 </div>
 
 <form novalidate class='form-horizontal' role='form'  name='form.createevent' ng-submit='createEvent()'>
-  <div class="modal-body">
+  <div class="modal-body create">
 
     <div class='form-group'>
       <label class='col-3 control-label' for='name'> Event Name</label>
@@ -23,7 +23,12 @@
     <div class='form-group'>
       <label class='col-3 control-label' for='event_date'>Event Date</label>
       <div class='col-7'>
-
+        <div class="input-group">
+          <input readonly type="text" class="form-control" datepicker-popup="{{format}}" ng-model="formData.event_date" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          <span class="input-group-addon">
+            <a ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></a>
+          </span>
+        </div>
       </div>
     </div>
 
