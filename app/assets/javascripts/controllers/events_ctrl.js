@@ -5,15 +5,22 @@ function EventsCtrl($scope, apiService) {
   	apiService.apiCall(function(data, status) {
   		if(status === 200) {
   			$scope.allEvents = data.all_events;
-  			console.log($scope.allEvents);
   			$scope.errorMessage = '';
   		} else {
   			$scope.errorMessage = 'No events to display';
   		}
   	}, 'GET', '/api/get-events', {});
   };
-
   $scope.getEvents();
+
+  $scope.deleteEvent = function(eventId, index) {
+    apiService.apiCall(function(data, status) {
+      if(status === 200) {
+        $scope.allEvents.splice(index,1);
+      } else {
+      }
+    }, 'GET', '/api/delete-event', {event_id: eventId});
+  }
 };
 
 EventsCtrl.$inject = ['$scope', 'apiService'];

@@ -67,6 +67,11 @@ var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
       templateUrl: '/partials/event',
       controller: 'EventCtrl'
     })
+    .state('edit_event', {
+      url: '/event/:id',
+      templateUrl: '/partials/edit_event',
+      controller: 'EditEventCtrl'
+    })
     .state('create_event', {
       url: '/create_event',
       templateUrl: '/partials/create_event',

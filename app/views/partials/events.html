@@ -3,10 +3,20 @@
 		<th> Name </th>
 		<th> Description </th>
 		<th> Event Date </th>
+		<th> Actions </th>
 	</tr>
 	<tr ng-repeat='event in allEvents'>
 		<td> {{event.name}} </td>
 		<td> {{event.description}} </td>
 		<td> {{event.event_date}} </td>
+		<td>
+			<div class='row'>
+				<div class='col-6'>
+					<a ng-href='event/{{event.id}}'> Edit </a>
+				</div>
+				<div class='col-6'>
+					<a ng-click='deleteEvent(event.id, $index)'> Delete </a>
+				</div>
+			</div>
 	</tr>
 </table>
