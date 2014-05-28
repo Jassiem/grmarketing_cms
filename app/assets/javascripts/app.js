@@ -81,6 +81,26 @@ var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
       url: '/events',
       templateUrl: '/partials/events',
       controller: 'EventsCtrl'
+    })
+    .state('petition', {
+      url: '/petition',
+      templateUrl: '/partials/petition',
+      controller: 'PetitionCtrl'
+    })
+    .state('create_petition', {
+      url: '/create_petition',
+      templateUrl: '/partials/create_petition',
+      controller: 'PetitionCtrl'
+    })
+    .state('petitions', {
+      url: '/petitions',
+      templateUrl: '/partials/petitions',
+      controller: 'PetitionsCtrl'
+    })
+    .state('edit_petition', {
+      url: '/petition/:id',
+      templateUrl: '/partials/edit_petition',
+      controller: 'EditPetitionCtrl'
     });
 
 	$locationProvider.html5Mode(true);

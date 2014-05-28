@@ -1,0 +1,18 @@
+<table class='table'>
+	<tr> 
+		<th> Name </th>
+		<th> Actions </th>
+	</tr>
+	<tr ng-repeat='petition in allPetitions'>
+		<td> {{petition.name}} </td>
+		<td>
+			<div class='row'>
+				<div class='col-6'>
+					<a ng-href='petition/{{petition.id}}'> Edit </a>
+				</div>
+				<div class='col-6'>
+					<a ng-click='deletePetition(petition.id, $index)'> Delete </a>
+				</div>
+			</div>
+	</tr>
+</table>
