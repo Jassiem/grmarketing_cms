@@ -101,6 +101,26 @@ var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
       url: '/petition/:id',
       templateUrl: '/partials/edit_petition',
       controller: 'EditPetitionCtrl'
+    })
+    .state('story', {
+      url: '/story',
+      templateUrl: '/partials/story',
+      controller: 'StoryCtrl'
+    })
+    .state('create_story', {
+      url: '/create_story',
+      templateUrl: '/partials/create_story',
+      controller: 'StoryCtrl'
+    })
+    .state('stories', {
+      url: '/stories',
+      templateUrl: '/partials/stories',
+      controller: 'StoriesCtrl'
+    })
+    .state('edit_story', {
+      url: '/story/:id',
+      templateUrl: '/partials/edit_story',
+      controller: 'EditStoryCtrl'
     });
 
 	$locationProvider.html5Mode(true);

@@ -1,0 +1,18 @@
+<table class='table'>
+	<tr> 
+		<th> Title </th>
+		<th> Actions </th>
+	</tr>
+	<tr ng-repeat='story in allStories'>
+		<td> {{story.title}} </td>
+		<td>
+			<div class='row'>
+				<div class='col-6'>
+					<a ng-href='story/{{story.id}}'> Edit </a>
+				</div>
+				<div class='col-6'>
+					<a ng-click='deleteStory(story.id, $index)'> Delete </a>
+				</div>
+			</div>
+	</tr>
+</table>

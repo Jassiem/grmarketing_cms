@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3>Create Story</h3>
+</div>
+
+<form novalidate class='form-horizontal' role='form'  name='form.createstory' ng-submit='createStory()'>
+  <div class="modal-body create">
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='title'> Story Name</label>
+      <div class='col-7'>
+        <input id='title' class='form-control' type='text' name='title' ng-model='formData.title' ng-pattern="/[a-zA-z0-9]+/" ng-minlength="3" ng-maxlength="60" required/>
+        <p class='error-helper text-danger' ng-show='form.createstory.title.$invalid && showErrors'>please enter a title</p>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='content'>Content</label>
+      <div class='col-7'>
+        <textarea id='content' placeholder='Enter story...' class='form-control' row='50' column='50' name='content' ng-model='formData.content' required> </textarea>
+        <p class='error-helper text-danger' ng-show='form.createstory.content.$invalid && showErrors'>A story must contain content.</p>
+      </div>
+    </div>
+
+    <div class='text-danger text-center'>{{errorMessage}}</div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success" type='submit'>Create</button>
+      <button class="btn btn-default" type='button' ng-click="cancel()">Cancel</button>
+  </div>
+</form>

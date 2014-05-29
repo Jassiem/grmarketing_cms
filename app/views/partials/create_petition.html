@@ -9,7 +9,7 @@
       <label class='col-3 control-label' for='name'> Petition Name</label>
       <div class='col-7'>
         <input id='name' class='form-control' type='text' name='name' ng-model='formData.name' ng-pattern="/[a-zA-z0-9]+/" ng-minlength="3" ng-maxlength="60" required/>
-        <p class='error-helper text-danger' ng-show='form.createpetition.name.$invalid && showErrors'>please enter an event name</p>
+        <p class='error-helper text-danger' ng-show='form.createpetition.name.$invalid && showErrors'>please enter a petition name</p>
       </div>
     </div>
 
@@ -17,7 +17,7 @@
       <label class='col-3 control-label' for='contents'>Content</label>
       <div class='col-7'>
         <textarea id='contents' placeholder='Enter petition...' class='form-control' row='50' column='50' name='contents' ng-model='formData.contents' required> </textarea>
-        <p class='error-helper text-danger' ng-show='form.createpetition.name.$invalid && showErrors'>A petition must contain content.</p>
+        <p class='error-helper text-danger' ng-show='form.createpetition.contents.$invalid && showErrors'>A petition must contain content.</p>
       </div>
     </div>
 

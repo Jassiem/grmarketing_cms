@@ -1,19 +1,19 @@
-function PetitionCtrl ($scope, apiService, $location) {
+function StoryCtrl ($scope, apiService, $location) {
 	$scope.showErrors = false;
   $scope.errorMessage;
 	$scope.form = {};
 
   $scope.formData = {};
 
-	$scope.createPetition = function() {
+	$scope.createStory = function() {
 		// check if form is valid
-    if ($scope.form.createpetition.$valid === false) {
+    if ($scope.form.createstory.$valid === false) {
       $scope.showErrors = true;
       return;
     }
 
     // add key for rails strong parameters and user data
-    $scope.formData = {petition: $scope.formData};
+    $scope.formData = {story: $scope.formData};
 
     // send form data to rails api
     apiService.apiCall(function(data, status){
@@ -21,15 +21,15 @@ function PetitionCtrl ($scope, apiService, $location) {
         $scope.cancel();
       }
       else {
-        $scope.errorMessage = 'Unable to create petition.';
+        $scope.errorMessage = 'Unable to create story.';
       }
 
-    }, 'POST', '/api/create-petition', $scope.formData);
+    }, 'POST', '/api/create-story', $scope.formData);
 	};
 
 	$scope.cancel = function() {
-		$location.url('/petition');
+		$location.url('/story');
 	}
 };
 
-PetitionCtrl.$inject = ['$scope', 'apiService', '$location'];
+StoryCtrl.$inject = ['$scope', 'apiService', '$location'];
