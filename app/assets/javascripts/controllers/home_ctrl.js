@@ -1,21 +1,16 @@
 // homepage controller
 function HomeCtrl($scope, apiService) {
 
-  $scope.init = function() {
-    $scope.testApi();
-  };
-
-  $scope.testApi = function() {
+  $scope.notify = function() {
     apiService.apiCall(function(data, status){
       if(status == 200) {
-        console.log(data);
+        console.log('success');
       } else {
         console.log('get fucked');
       }
 
-    }, 'GET', '/api/test', {});
+    }, 'POST', '/api/send-notification', {});
   }
 
-  $scope.init();
 }
 HomeCtrl.$inject = ['$scope', 'apiService'];

@@ -38,9 +38,5 @@ end
 
  gem 'sprockets_better_errors', group: :development
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'pushmeup'
 

@@ -1,14 +1,8 @@
 Grassroot::Application.routes.draw do
-  get "story/create"
-  get "story/edit"
-  get "story/delete"
-  get "story/get_story"
-  get "story/get_stories"
   get "layout/index"
 
   get "partials/:partial", to: "partials#show_partial"
   #get "secured/:partial", to: "partials#show_secured"
-  match "api/test", to: "session#test", via: [:get]
 
   match "api/create-event", to: "event#create", via: [:post]
   match "api/get-events", to: "event#get_all_events", via: [:get]
@@ -28,6 +22,9 @@ Grassroot::Application.routes.draw do
   match "api/delete-story", to: "story#delete", via: [:post]
   match "api/edit-story", to: "story#edit", via: [:post]
 
+  match "api/create-device", to: "device#create", via: [:post]
+  match "api/get-devices", to: "device#get_all_devices", via: [:get]
+  match "api/send-notification", to: "device#notify", via: [:post]
 
   # API Routes
 
