@@ -46,8 +46,21 @@ class PetitionController < ApplicationController
     render :json =>{all_petitions: all_petitions}, status: :ok
   end
 
+  def sign_petition
+    @signatory = Signatory.new(signatory_params)
+    if(@signatory.save)
+      render :json => {}, status: :ok
+    else
+      render :json -> {message: 'Unable to sign petition.'}, status: :bad_request
+    end
+  end
+
   private
     def petition_params
       params.require(:petition).permit(:name, :contents)
     end
+
+    def signatory_params
+      params.require(:signatory).permit(:name, :email, :petition_id)
+    end 
 end

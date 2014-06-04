@@ -1,4 +1,5 @@
 Grassroot::Application.routes.draw do
+  get "newsletter/create"
   get "layout/index"
 
   get "partials/:partial", to: "partials#show_partial"
@@ -15,6 +16,7 @@ Grassroot::Application.routes.draw do
   match "api/get-petition", to: "petition#get_petition", via: [:get]
   match "api/delete-petition", to: "petition#delete", via: [:post]
   match "api/edit-petition", to: "petition#edit", via: [:post]
+  match "api/sign-petition", to: "petition#sign_petition", via: [:post]
 
   match "api/create-story", to: "story#create", via: [:post]
   match "api/get-stories", to: "story#get_all_stories", via: [:get]
