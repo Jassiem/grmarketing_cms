@@ -51,7 +51,7 @@ class PetitionController < ApplicationController
     if(@signatory.save)
       render :json => {}, status: :ok
     else
-      render :json -> {message: 'Unable to sign petition.'}, status: :bad_request
+      render :json => {message: 'Unable to sign petition.'}, status: :bad_request
     end
   end
 
