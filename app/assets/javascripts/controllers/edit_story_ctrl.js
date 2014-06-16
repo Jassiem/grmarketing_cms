@@ -1,7 +1,8 @@
 function EditStoryCtrl($scope, apiService, $location, $stateParams) {
 	$scope.formData = {
 		title: '',
-		content: ''
+		content: '',
+		url: ''
 	}
 
 	$scope.init = function() {
@@ -10,6 +11,7 @@ function EditStoryCtrl($scope, apiService, $location, $stateParams) {
 			if(status === 200) {
 				$scope.formData.title = data.story.title;
 				$scope.formData.content = data.story.content;
+				$scope.formData.url = data.story.url;
 			} else {}
 		}, 'GET', '/api/get-story', {story_id: $stateParams.id});
 	};

@@ -14,6 +14,14 @@
     </div>
 
     <div class='form-group'>
+      <label class='col-3 control-label' for='title'>Web Link</label>
+      <div class='col-7'>
+        <input id='title' class='form-control' type='url' name='url' ng-model='formData.url' required/>
+        <p class='error-helper text-danger' ng-show='form.createstory.url.$invalid && showErrors'>please enter a web link</p>
+      </div>
+    </div>
+
+    <div class='form-group'>
       <label class='col-3 control-label' for='content'>Content</label>
       <div class='col-7'>
         <textarea id='content' placeholder='Enter story...' class='form-control' row='50' column='50' name='content' ng-model='formData.content' required> </textarea>
