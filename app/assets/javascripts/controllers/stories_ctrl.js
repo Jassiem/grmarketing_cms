@@ -19,7 +19,7 @@ function StoriesCtrl($scope, apiService) {
         $scope.allStories.splice(index,1);
       } else {
       }
-    }, 'GET', '/api/delete-story', {story_id: storyId});
+    }, 'POST', '/api/delete-story', {story_id: storyId});
   }
 };
 

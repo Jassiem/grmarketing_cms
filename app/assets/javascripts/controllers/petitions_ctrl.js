@@ -19,7 +19,7 @@ function PetitionsCtrl($scope, apiService) {
         $scope.allPetitions.splice(index,1);
       } else {
       }
-    }, 'GET', '/api/delete-petition', {petition_id: petitionId});
+    }, 'POST', '/api/delete-petition', {petition_id: petitionId});
   }
 };
 

@@ -19,7 +19,7 @@ function EventsCtrl($scope, apiService) {
         $scope.allEvents.splice(index,1);
       } else {
       }
-    }, 'GET', '/api/delete-event', {event_id: eventId});
+    }, 'POST', '/api/delete-event', {event_id: eventId});
   }
 };
 

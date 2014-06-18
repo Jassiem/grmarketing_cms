@@ -29,7 +29,7 @@ function MessagesCtrl($scope, apiService) {
         $scope.allMessages.splice(index,1);
       } else {
       }
-    }, 'GET', '/api/delete-message', {message_id: messageId});
+    }, 'POST', '/api/delete-message', {message_id: messageId});
   }
 };
 
