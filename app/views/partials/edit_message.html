@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3>Create Message</h3>
+</div>
+
+<form novalidate class='form-horizontal' role='form'  name='form.editmessage' ng-submit='editMessage()'>
+  <div class="modal-body create">
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='name'> Title </label>
+      <div class='col-7'>
+        <input id='title' class='form-control' type='text' name='title' ng-model='formData.title' ng-pattern="/[a-zA-z0-9]+/" ng-maxlength="60" required/>
+        <p class='error-helper text-danger' ng-show='form.createmessage.title.$invalid && showErrors'>please enter a message name</p>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='contents'>Contents</label>
+      <div class='col-7'>
+        <textarea id='contents' placeholder='Enter message...' class='form-control' row='50' column='50' name='contents' ng-model='formData.contents' required> </textarea>
+        <p class='error-helper text-danger' ng-show='form.createmessage.contents.$invalid && showErrors'>A message must have a body.</p>
+      </div>
+    </div>
+
+    <div class='text-danger text-center'>{{errorMessage}}</div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success" type='submit'>Submit</button>
+      <button class="btn btn-default" type='button' ng-click="cancel()">Cancel</button>
+  </div>
+</form>

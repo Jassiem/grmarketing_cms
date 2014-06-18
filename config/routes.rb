@@ -1,4 +1,8 @@
 Grassroot::Application.routes.draw do
+  get "message/create"
+  get "message/get_message"
+  get "message/get_messages"
+  get "message/delete"
   get "newsletter/create"
   get "layout/index"
 
@@ -26,7 +30,13 @@ Grassroot::Application.routes.draw do
 
   match "api/create-device", to: "device#create", via: [:post]
   match "api/get-devices", to: "device#get_all_devices", via: [:get]
-  match "api/send-notification", to: "device#notify", via: [:post]
+
+  match "api/create-message", to: "message#create", via: [:post]
+  match "api/get-message", to: "message#get_message", via: [:get]
+  match "api/get-messages", to: "message#get_messages", via: [:get]
+  match "api/delete-message", to: "message#delete", via: [:post]
+  match "api/edit-message", to: "message#edit", via: [:post]
+  match "api/send-notification", to: "message#notify", via: [:post]
 
   # API Routes
 

@@ -1,6 +1,4 @@
 class DeviceController < ApplicationController
-	include DeviceHelper
-
 	def create
 		@device = Device.new(device_params)
     if(@device.save)
@@ -13,11 +11,6 @@ class DeviceController < ApplicationController
 	def get_all_devices
 		all_devices = Device.all.to_a
 		render :json =>{all_devices: all_devices}, status: :ok
-	end
-
-	def notify
-		send_notifications("Bank account statement just look like I'm ready for early retirement.")
-		render :json => {}, status: :ok
 	end
 
   private

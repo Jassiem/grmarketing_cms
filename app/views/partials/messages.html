@@ -1,0 +1,21 @@
+<table class='table'>
+	<tr> 
+		<th> Title </th>
+		<th> Actions </th>
+	</tr>
+	<tr ng-repeat='message in allMessages'>
+		<td> {{message.title}} </td>
+		<td>
+			<div class='row'>
+				<div class='col-4'>
+					<a ng-click='sendMessage(message.id)'> Send </a>
+				</div>
+				<div class='col-4'>
+					<a ng-href='message/{{message.id}}'> Edit </a>
+				</div>
+				<div class='col-4'>
+					<a ng-click='deleteMessage(message.id, $index)'> Delete </a>
+				</div>
+			</div>
+	</tr>
+</table>
