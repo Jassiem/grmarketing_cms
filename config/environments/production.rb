@@ -57,6 +57,9 @@ Grassroot::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')  
+  config.assets.precompile += /\.(?:svg|eot|woff|ttf)$/
+
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w( application.js application.css )
