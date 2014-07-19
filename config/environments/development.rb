@@ -28,4 +28,13 @@ Grassroot::Application.configure do
   config.assets.debug = true
 
   config.assets.raise_production_errors = true
+    #configuration for amazon s3
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'grassrootimages',
+      :access_key_id => 'AKIAIEFQUWEB3FU3CPSQ',
+      :secret_access_key => '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'
+    }
+  }
 end

@@ -40,3 +40,7 @@ end
 
  gem 'pushmeup'
 
+ gem 'paperclip'
+
+ gem 'aws-sdk'
+

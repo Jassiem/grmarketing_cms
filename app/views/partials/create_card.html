@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h3>Create Card</h3>
+</div>
+
+<form novalidate class='form-horizontal' role='form'  name='form.createcard' ng-submit='createCard()' enctype='multipart/form-data'>
+  <div class="modal-body create">
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='name'> Title </label>
+      <div class='col-7'>
+        <input id='title' class='form-control' type='text' name='title' ng-model='formData.title' ng-pattern="/[a-zA-z0-9]+/" ng-minlength="3" ng-maxlength="60" required/>
+        <p class='error-helper text-danger' ng-show='form.createcard.title.$invalid && showErrors'>please enter an card name</p>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='description'>Description</label>
+      <div class='col-7'>
+        <textarea id='description' placeholder='optional description' class='form-control' row='4' column='50' name='description' ng-model='formData.description'> </textarea>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='file-upload'> Select an image file:</label>
+      <div class='col-7'>
+        <input id='file-upload' class='form-control' type='file' name='fileUpload' onchange="angular.element(this).scope().getFile(this)" required/>
+        <p class='error-helper text-danger' ng-show='form.createcard.file-upload.$error.required && showErrors'> A file must be entered. </p>
+        <p class='error-helper text-danger' ng-show='invalidFileType && showErrors'>Unsupported file type.</p>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='start_date'>Start Date</label>
+      <div class='input-group col-5'>
+        <input readonly type="text" class="form-control" datepicker-popup="{{format}}" ng-model="formData.start_date" is-open="opened1" min-date="minDate" datepicker-options="dateOptions" ng-required="false" close-text="Close" />
+        <div class='input-group-addon'> <a ng-click="open($event, 'opened1')"><span class="glyphicon glyphicon-calendar"></span></a> </div>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class='col-3 control-label' for='end_date'>End Date</label>
+      <div class='input-group col-5'>
+        <input readonly type="text" class="form-control" datepicker-popup="{{format}}" ng-model="formData.end_date" is-open="opened2" min-date="minDate" datepicker-options="dateOptions" ng-required="false" close-text="Close" />
+        <div class='input-group-addon'> <a ng-click="open($event, 'opened2')"><span class="glyphicon glyphicon-calendar"></span></a> </div>
+      </div>
+    </div>
+
+    <div class='text-danger text-center'>{{errorMessage}}</div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success" type='submit'>Create</button>
+      <button class="btn btn-default" type='button' ng-click="cancel()">Cancel</button>
+  </div>
+</form>

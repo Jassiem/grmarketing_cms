@@ -1,0 +1,25 @@
+<table class='table'>
+	<tr> 
+		<th> Title </th>
+		<th> Description </th>
+		<th> Graphic </th>
+		<th> Start Date </th>
+		<th> End Date </th>
+	</tr>
+	<tr ng-repeat='card in allCards'>
+		<td> {{card.title}} </td>
+		<td> {{card.description}} </td>
+		<td> <img ng-src='{{card.graphic_file_name}}'/> </td>
+		<td> {{card.start_date}} </td>
+		<td> {{card.end_date}} </td>
+		<td>
+			<div class='row'>
+				<div class='col-6'>
+					<a ng-href='card/{{card.id}}'> Edit </a>
+				</div>
+				<div class='col-6'>
+					<a ng-click='deleteCard(card.id, $index)'> Delete </a>
+				</div>
+			</div>
+	</tr>
+</table>

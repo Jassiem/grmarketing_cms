@@ -38,6 +38,12 @@ Grassroot::Application.routes.draw do
   match "api/edit-message", to: "message#edit", via: [:post]
   match "api/send-notification", to: "message#notify", via: [:post]
 
+  match "api/create-card", to: "card#create", via: [:post]
+  match "api/get-card", to: "card#get_card", via: [:get]
+  match "api/get-cards", to: "card#get_all_cards", via: [:get]
+  match "api/delete-card", to: "card#delete", via: [:post]
+  match "api/edit-card", to: "card#edit", via: [:post]
+
   # API Routes
 
   # ===========================

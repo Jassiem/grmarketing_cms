@@ -141,6 +141,26 @@ var grassroot = angular.module('grassroot', ['ui.router', 'ui.bootstrap'])
       url: '/message/:id',
       templateUrl: '/partials/edit_message',
       controller: 'EditMessageCtrl'
+    })
+    .state('card', {
+      url: '/card',
+      templateUrl: '/partials/card',
+      controller: 'CardCtrl'
+    })
+    .state('edit_card', {
+      url: '/card/:id',
+      templateUrl: '/partials/edit_card',
+      controller: 'EditCardCtrl'
+    })
+    .state('create_card', {
+      url: '/create_card',
+      templateUrl: '/partials/create_card',
+      controller: 'CardCtrl'
+    })
+    .state('cards', {
+      url: '/cards',
+      templateUrl: '/partials/cards',
+      controller: 'CardsCtrl'
     });
 
 	$locationProvider.html5Mode(true);
